@@ -118,6 +118,7 @@ if (PYTHON_EXTENSIONS)
 
   add_library(
     folly_python_cpp
+      python/error.cpp
       python/executor.cpp
       python/iobuf.cpp
   )

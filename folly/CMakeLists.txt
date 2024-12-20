@@ -132,7 +132,7 @@ if (PYTHON_EXTENSIONS)
   install(
     TARGETS folly_python_cpp
     EXPORT folly
-    DESTINATION ${CMAKE_INSTALL_PREFIX}
+    DESTINATION ${LIB_INSTALL_DIR}
   )
   install(
     TARGETS folly_python_cpp

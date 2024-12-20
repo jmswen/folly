@@ -127,7 +127,6 @@ if (PYTHON_EXTENSIONS)
   set_property(TARGET folly_python_cpp PROPERTY VERSION ${PACKAGE_VERSION})
   target_compile_definitions(folly_python_cpp PRIVATE BOOST_NO_AUTO_PTR)
   target_include_directories(folly_python_cpp PRIVATE "${_cybld}")
-  target_include_directories(folly_python_cpp PUBLIC "${CMAKE_CURRENT_BINARY_DIR}")
   target_link_libraries(folly_python_cpp PUBLIC folly)
   apply_folly_compile_options_to_target(folly_python_cpp)
   install(
@@ -138,6 +137,12 @@ if (PYTHON_EXTENSIONS)
   install(
     TARGETS folly_python_cpp
     DESTINATION ${PYTHON_INSTALL_DIR}
+  )
+  install(
+    DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+    DESTINATION ${CMAKE_INSTALL_PREFIX}
+    FILES_MATCHING
+      PATTERN "*.h"
   )
 
   add_custom_command(TARGET folly_python_bindings

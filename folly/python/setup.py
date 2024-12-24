@@ -17,6 +17,9 @@
 #
 # Cython requires source files in a specific structure, the structure is
 # created as tree of links to the real source files.
+import sys
+
+raise Exception(f"{sys.version=} {sys.executable=}")
 
 from Cython.Build import cythonize
 from Cython.Compiler import Options
